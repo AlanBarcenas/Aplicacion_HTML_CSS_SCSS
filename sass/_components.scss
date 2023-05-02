@@ -1,0 +1,100 @@
+@mixin btn-sm-modify {
+    font-size: .75rem;
+    padding: .1rem 1rem;
+}
+
+@mixin btn-base {
+    padding: .25rem 1.5rem;
+    border-radius: .25rem;
+}
+
+
+
+//
+$color-main: blue;
+
+.btn-main {
+    background-color: $color-main;
+    color: white;
+    @include btn-base();
+    border: solid 1px $color-main;
+
+    &:hover {
+        background-color: white;
+        color: $color-main;
+
+
+    }
+
+    &-s {
+        @extend .btn-main;
+        @include btn-sm-modify();
+    }
+}
+
+.btn-sec {
+    @include btn-base();
+    color: black;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        color: #8888;
+    }
+
+    &-s {
+        @extend .btn-sec;
+        @include btn-sm-modify();
+    }
+}
+
+.main-menu {
+    li {
+
+        list-style: none;
+        display: inline;
+        font-size: .75rem;
+
+    }
+}
+
+.icon-sm {
+
+    i {
+        color: $color-main;
+        width: 4rem;
+        height: 4rem;
+        padding: .25rem;
+        border: solid black;
+        border-radius: 50%;
+        box-shadow: 0 0 10px black;
+        font-size: .75rem;
+    }
+
+    & :hover {
+        color: aqua;
+    }
+
+
+}
+
+////////////////////navegacion/////////////////////////////////////////////////////
+@mixin alineacionLista {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    display: inline;
+    border: 15%;
+    padding: 14px;
+}
+
+.configuracionLista {
+    li {
+        @include alineacionLista
+    }
+
+    & :hover {
+        color :aqua;
+    }
+
+}
